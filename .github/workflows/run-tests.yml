@@ -21,14 +21,14 @@ jobs:
           sudo dpkg --configure -a
           sudo rm -f /var/lib/dpkg/lock-frontend
           sudo apt-get update -y 
-         
-          sudo python -m pip3 install --upgrade pip
-          sudo pip install mercury
+          sudo apt install python3-pip
+          
+          sudo pip3 install mercury
           sudo ./scripts/pack_mercury.sh
           sudo pip3 install --upgrade setuptools
           
           cd mercury
-          sudo pip3 install -U -g -r requirements.txt
+          sudo pip3 install -g -r requirements.txt
       - name: Test backend
         run: |
           cd mercury
