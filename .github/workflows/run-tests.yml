@@ -18,6 +18,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
+          sudo dpkg --configure -a
           sudo apt-get update -y && apt-get upgrade -y
           sudo python -m venv .
           sudo source ./bin/activate
