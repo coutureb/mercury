@@ -1,0 +1,22 @@
+name: "CodeQL"
+ 25
+ 26 on:
+ 27   push:
+ 28     branches: ["main"]
+ 29   pull_request:
+ 30     branches: ["main"]
+ 31   schedule:
+ 32     - cron: '0 0 * * 1'
+ 33
+ 34 jobs:
+ 35   analyze:
+ 36     runs-on: ubuntu-latest
+ 37     strategy:
+ 38       matrix:
+ 39         language:['csharp', 'cpp', 'go', 'java', 'javascript', 'python']
+ 40     steps:
+ 41       - uses: actions/checkout@v4
+ 42       - uses: github/codeql-action/init@v3
+ 43         with:
+ 44           languages: \${{ matrix.language }}
+ 45       - uses: github/codeql-action/analyze@v3
