@@ -21,6 +21,7 @@ jobs:
           sudo dpkg --configure -a
           sudo rm -f /var/lib/dpkg/lock-frontend
           sudo apt-get update -y 
+          sudo apt install build-essential
           sudo apt install python3-pip
           sudo pip install urllib3
           sudo pip3 install mercury
