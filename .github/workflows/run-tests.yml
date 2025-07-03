@@ -20,7 +20,7 @@ jobs:
         run: |
           sudo dpkg --configure -a
           sudo rm -f /var/lib/dpkg/lock-frontend
-          sudo apt-get update -y && apt-get upgrade -y
+          sudo apt-get update -y 
           sudo python -m venv .
           sudo source ./bin/activate
           sudo python -m pip install --upgrade pip
