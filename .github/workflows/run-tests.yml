@@ -19,16 +19,16 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update -y && apt-get upgrade -y
-          python -m venv .
-          source ./bin/activate
-          python -m pip install --upgrade pip
-          pip install mercury
-          ./scripts/pack_mercury.sh
-          pip install --upgrade setuptools
-          mkdir -f mercury 
+          sudo python -m venv .
+          sudo source ./bin/activate
+          sudo python -m pip install --upgrade pip
+          sudo pip install mercury
+          sudo ./scripts/pack_mercury.sh
+          sudo pip install --upgrade setuptools
+          sudo mkdir -f mercury 
           cd mercury
-          pip install -U -r requirements.txt
+          sudo pip install -U -g -r requirements.txt
       - name: Test backend
         run: |
           cd mercury
-          python manage.py test apps
+          sudo python manage.py test apps
