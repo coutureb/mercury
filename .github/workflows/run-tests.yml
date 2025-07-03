@@ -27,7 +27,7 @@ jobs:
           sudo pip install mercury
           sudo ./scripts/pack_mercury.sh
           sudo pip install --upgrade setuptools
-          sudo mkdir -f mercury 
+          
           cd mercury
           sudo pip install -U -g -r requirements.txt
       - name: Test backend
