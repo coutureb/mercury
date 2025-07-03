@@ -22,12 +22,13 @@ jobs:
           sudo rm -f /var/lib/dpkg/lock-frontend
           sudo apt-get update -y 
           sudo apt install python3-pip
-          
+          sudo pip install urllib3
           sudo pip3 install mercury
           sudo ./scripts/pack_mercury.sh
           sudo pip3 install --upgrade setuptools
           
           cd mercury
+          
           sudo pip3 install -g -r requirements.txt
       - name: Test backend
         run: |
